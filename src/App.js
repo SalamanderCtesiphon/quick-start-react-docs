@@ -51,6 +51,7 @@ function App() {
     <div className="App">
       <h1>Welcome to my app</h1>
      <MyButton />
+     <MyButton />
      <ShoppingList />
     </div>
   );
