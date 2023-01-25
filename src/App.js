@@ -1,24 +1,14 @@
 import './App.css';
 import { useState } from 'react';
 
-function MyButton() { 
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
-  function decrementCount() {
-    setCount(count - 1);
-  }
-
+function MyButton({ count, onClick }) { 
+ 
   return (
     <div>
       <h1>{count}</h1>
-      <button onClick={handleClick}> 
+      <button onClick={onClick}> 
         Increment
       </button>
-      <button onClick={decrementCount}>Decrement</button>
     </div>
   );
 }
@@ -47,11 +37,19 @@ function ShoppingList() {
 }
 
 function App() {
+
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+
   return (
     <div className="App">
       <h1>Welcome to my app</h1>
-     <MyButton />
-     <MyButton />
+     <MyButton count={count} onClick={handleClick} />
+     <MyButton count={count} onClick={handleClick} />
      <ShoppingList />
     </div>
   );
